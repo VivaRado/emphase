@@ -1,9 +1,0 @@
-cssselect2
-html5lib
-cairocffi
-cairosvg
-pyphen
-markdown2
-bs4
-selenium
-pygments == 2.2
