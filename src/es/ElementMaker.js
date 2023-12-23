@@ -72,7 +72,6 @@ function createLines(em) {
 		em._syntax.appendChild(syntaxCode);
 	}
 }
-
 const ElementMaker = {
 	makeButtons : makeButtons,
 	createLines : createLines,
@@ -81,5 +80,4 @@ const ElementMaker = {
 	makeNumberTab : makeNumberTab,
 	createElements : createElements
 };
-
 export {ElementMaker}
