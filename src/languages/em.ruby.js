@@ -1,0 +1,47 @@
+var lang = {
+    name: "ruby",
+    friendlyName: "Ruby",
+    keywords: [
+        "BEGIN",
+        "END",
+        "alias",
+        "and",
+        "begin",
+        "break",
+        "case",
+        "class",
+        "def",
+        "module",
+        "next",
+        "nil",
+        "not",
+        "or",
+        "redo",
+        "rescue",
+        "retry",
+        "return",
+        "elsif",
+        "end",
+        "ensure",
+        "for",
+        "if",
+        "undef",
+        "unless",
+        "do",
+        "else",
+        "super",
+        "then",
+        "until",
+        "when",
+        "while",
+        "defined?",
+        "self"   
+    ],
+    values: [
+        "false",
+        "true"
+    ],
+    comment: "#",
+    multiLineComment: {init: "=begin", term: "=end"}
+};
+if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

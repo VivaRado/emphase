@@ -1,2 +1,3 @@
-# emphase
-# Emphasize your syntax!
+# Emphase
+
+## Emphasize your syntax!

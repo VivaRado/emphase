@@ -1,0 +1,242 @@
+/* * Syntax.js Library v1.8.0 * * Copyright 2023 Bunoon * Released under the MIT License */
+/* ------------------------------------------------------------------------- Syntax.js - Variables ------------------------------------------------------------------------- */
+:root {
+	--color-keyword: #a71500;
+	--color-directive: #a71500;
+	--color-value: #f28c28;
+	--color-comment: #78b13f;
+	--color-multi-line-comment: var(--color-comment);
+	--color-string: #484dd2;
+	--color-multi-line-string: var(--color-string);
+	--color-black: #3b3a3a;
+	--color-white: #f5f5f5;
+	--color-dark-gray: #808080;
+	--color-gray: #bbb;
+	--color-lighter-gray: #c0c0c0;
+	--container-background-color-container: #e8e6e6;
+	--container-border-color-container: var(--color-black);
+	--container-background-color-syntax: #eee;
+	--container-border-color-syntax: #ccc;
+	--container-background-color-numbers: #ddd;
+	--container-border-color-numbers: var(--color-gray);
+	--button-background-color: var(--color-black);
+	--button-text-color: var(--color-white);
+	--border-radius: 0.5rem;
+	--border-style-scrollbar: inset 0 0 6px --color-dark-gray;
+	--border-size: 2px;
+	--transition: all 0.3s;
+
+	--container-background-gradient-numbers: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%);
+
+	--numbers_transform: translateY(0px);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Colors */
+		--color-keyword: #ff8300;
+		--color-directive: #4157ce;
+		--color-value: #71c671/*#F28C28*/;
+		--color-comment: #40454a;
+		--color-multi-line-comment: var(--color-comment);
+		--color-string: #ff8000;
+		--color-string-dcv: #6b97ff;
+		--color-multi-line-string: var(--color-string);
+		--color-black: #acbac7;
+		--color-white: var(--color-black);
+		--color-dark-gray: #808080;
+		--color-gray: #BBBBBB;
+		--color-lighter-gray: #C0C0C0;
+		--color-numbers: #40454a;
+
+		/* Containers */
+		--container-background-color-container: #1c2128;
+		--container-border-color-container: #454c56;
+		--container-background-color-syntax: #111;
+		--container-border-color-syntax: var(--container-border-color-container);
+		--container-border-color-numbers: rgba(255,255,255,0.05);
+
+		/* Buttons */
+		--button-background-color: #F5F5F5;
+		--button-text-color: #3b3a3a;
+
+		/* Borders */
+		--border-radius: 0.5rem;
+		--border-style-scrollbar: inset 0 0 6px --color-dark-gray;
+		--border-size: 2px;
+
+		/* Transitions */
+		--transition: all .3s;
+
+		--container-background-gradient-numbers: linear-gradient(90deg, rgba(17,17,17,1) 0%, rgba(17,17,17,1) 80%, rgba(17,17,17,0) 100%)
+	}
+}
+
+.syntax{ 
+	width: auto;
+	height: auto;
+	display: table;
+
+}
+.syntax-highlight {
+	position: relative;
+	font-family: monospace;
+	display: block;
+	width: 100%;
+	height: 20rem;
+	overflow: hidden;
+	line-height: 1.35rem;
+	font-size: 10px;
+}
+.syntax-highlight .code {
+	overflow: auto;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.syntax-highlight .code pre {
+	margin: 0 !important;
+}
+.syntax-highlight .numbers {
+	padding: 1rem;
+	text-align: right;
+	cursor: default;
+	height: auto;
+	position: absolute;
+	display: table;
+	top: 0;
+	z-index: 2;
+	transform: translateY( var(--numbers_transform) );
+	transition: transform 0s;
+}
+.syntax-highlight .code .number_tab {
+	content: '';
+	position: sticky;
+	width: 4rem;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: var(--container-background-gradient-numbers);
+	display: block;
+	opacity: 1;
+	z-index: 2;
+}
+
+.syntax-highlight .numbers p{
+	margin: 0;
+	white-space: nowrap;
+	color: var(--color-numbers);
+
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+@media (min-width: 768px) {
+	.syntax-highlight .numbers, 
+	.syntax-highlight .numbers {
+		display: block;
+	}
+}
+.syntax-highlight .code .syntax {
+	padding: 1rem 0.5rem;
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+.syntax-highlight-wrap .syntax-highlight .code .syntax {
+	background-color: transparent;
+	border: none;
+}
+
+.syntax-highlight .header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	margin: 0.8rem 0.7rem;
+}
+.syntax-highlight .header .button{
+	color: var(--button-text-color);
+	background-color: var(--button-background-color);
+}
+.syntax-highlight .header .button,
+.syntax-highlight .header .label{
+	font-size: 0.9rem;
+	padding: 0.4rem 0.6rem;
+	display: inline-block;
+	border: none;
+	line-height: 1rem;
+}
+.syntax-highlight .header .label{
+	cursor: default;
+	color: var(--color-gray);
+}
+.syntax-highlight .header .button {
+	border-radius: 0.15rem;
+	font-weight: bold;
+	opacity: 0.7;
+	background: transparent;
+	border: 2px solid #666;
+	color: #666;
+}
+.syntax-highlight .header .button:hover {
+	cursor: pointer;
+	border: 2px solid #fff;
+	color: #000;
+	background: #fff;
+	opacity: 1;
+	transition: var(--transition);
+}
+.syntax-highlight .code .syntax p{
+	margin: 0;
+	
+	color: var(--color-black);
+	display: block;
+}
+.syntax-highlight .code .syntax p em {
+	font-style:normal;
+}
+.syntax-highlight .code .syntax p em[data-em=kwd]{
+	font-weight: 700;
+	color: var(--color-keyword);
+}
+.syntax-highlight .code .syntax p em[data-em=dcv_str]{
+	color: var(--color-string-dcv);
+}
+.syntax-highlight .code .syntax p em[data-em=dcv]{
+	font-weight: 700;
+	color: var(--color-directive);
+}
+.syntax-highlight .code .syntax p em[data-em=val]{
+	font-weight: 700;
+	color: var(--color-value);
+}
+.syntax-highlight .code .syntax p em[data-em=cmt]{
+	color: var(--color-comment);
+}
+.syntax-highlight .code .syntax p em[data-em=cmt_mul]{
+	color: var(--color-multi-line-comment);
+}
+.syntax-highlight .code .syntax p em[data-em=str]{
+	color: var(--color-string);
+}
+.syntax-highlight .code .syntax p em[data-em=str_mul]{
+	color: var(--color-multi-line-string);
+}
+
+/**/
+.syntax-highlight .header,
+.syntax-highlight:hover .header {
+	transition: opacity 0.5s;
+}
+.syntax-highlight .header{
+	opacity: 0;
+}
+.syntax-highlight:hover .header {
+	opacity: 1;
+}
