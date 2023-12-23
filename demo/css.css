@@ -2,93 +2,42 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-family: monospace;
-	color: #333;
-	background: #FFF;
+	color: #dfdfdf;
+	background: #262626;
 	height: 100%;
 	overflow: auto;
 	font-size: 12px;
-  	line-height: 1.6rem;
+	line-height: 1.6rem;
 }
-
 body {
-
-  padding: .25rem;
+	padding: 2rem;
 }
-
-
-header {
-	padding-top: 10px;
-	display: flex;
-	height: 58px;
-}
-
-header h1 {
-	margin: 0;
-}
-
 * {
 	box-sizing: border-box;
 }
-
-.containers {
-	display: flex;
-	height: calc(100vh - 68px);
-}
-
 .container {
-	width: 50%;
+	width: 100%;
 	padding: 5px;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	box-sizing: border-box;
 }
-
-.pane, .inputPane {
-	margin-top: 1rem;
-	padding: 1em;
-	
-	overflow: auto;
-	flex-grow: 1;
-	flex-shrink: 1;
-	border-radius: 0.3rem;
-}
-
-#preview {
-	width: 100%;
-}
-
-.error {
-	border-color: red;
-	background-color: #FEE
-}
-
-.loadingError {
-	background-color: #fee;
-	font-weight: bold;
-	color: #f00;
-	text-align: center;
-	padding: 10px;
-}
-
-#responseTime {
-    display: inline-block;
-}
-
-.inputPane {
-	background: #222;
-	color: #fff;
-	border: none;
-}
-
-.container .label {
-	font-size: 1.2rem;
-	padding: 0.8rem 0;
-}
 pre {
 	background: #111;
 	border-radius: 0.3rem;
 	overflow: hidden;
 }
-pre code {
+pre code {}
+.two>* {
+	width: calc(50% - 0.5rem);
+	float: left;
+}
+.two {
+	width: 100%;
+	position: relative;
+	float: left;
+}
+.two>*:first-of-type {
+	margin-right: 1rem;
 }

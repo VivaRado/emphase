@@ -31,8 +31,6 @@ class LanguageLoader {
 				var _lang = require(`../languages/em.${lang}.js`);
 				lang_isloaded = _lang;
 			}
-			console.log('lang_isloaded')
-			console.log(lang_isloaded)
 			if (lang_nonexist && lang_supports && lang_isloaded) {
 				self._cached_languages[lang] = lang_isloaded
 			}

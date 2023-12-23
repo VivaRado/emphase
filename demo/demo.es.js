@@ -20,7 +20,6 @@ function process_codeblocks(codeblocks){
     for (var i = 0; i < codeblocks.length; i++) {
         var pnode = codeblocks[i].parentNode;
         if (pnode.tagName == 'PRE') {
-            pnode.classList.add("syntax-highlight-wrap");
             // this captures the lang-* of a codeblock as is common when the elements are generated from MD (Markdown)
             // you could pass that to the emphasize() function from a data-attribute or just a string.
             var prefx = 'lang-';

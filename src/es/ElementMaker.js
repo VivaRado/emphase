@@ -44,7 +44,7 @@ function makeNumberTab(em) {
 	});
 }
 function createElements(em) {
-	em._element.classList.add("syntax-highlight");
+	em._element.classList.add("emphase");
 	em._element.innerHTML = em._string.empty;
 	em._code = classElement("div", "code");
 	em._element.appendChild(em._code);
