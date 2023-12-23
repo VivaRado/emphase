@@ -2,3 +2,6 @@
 node_modules
 _README
 _README/*
+demo/vendor
+demo/demo_md.js
+demo/index_md.html
