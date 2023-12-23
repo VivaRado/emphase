@@ -1,6 +1,6 @@
 ./node_modules/*
-README/*
-README/README.html
+./README/*
+./README/README.html
 !README.md
 geckodriver.log
 ./demo/vendor/*
