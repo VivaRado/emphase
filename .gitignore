@@ -1,6 +1,6 @@
-./node_modules
+node_modules
 ./node_modules/*
-./README
+README
 ./README/*
 ./README/README.html
 !README.md
