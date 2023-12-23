@@ -1,13 +1,10 @@
+# .gitignore
 node_modules
-./node_modules/*
-README
-./README/*
-./README/README.html
-!README.md
+_README
+_README/*
+_README/*.html
 geckodriver.log
 ./demo/vendor/*
 ./demo/demo_md.js
 ./demo/index_md.html
 package-lock.json
-node_modules/
-README/
