@@ -4,7 +4,7 @@ _README
 _README/*
 _README/*.html
 geckodriver.log
-./demo/vendor/*
-./demo/demo_md.js
-./demo/index_md.html
+demo/vendor
+demo/demo_md.js
+demo/index_md.html
 package-lock.json
