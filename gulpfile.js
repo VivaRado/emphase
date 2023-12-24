@@ -8,7 +8,6 @@ const source    = require('vinyl-source-stream');
 const buffer    = require('vinyl-buffer');
 const rename    = require('gulp-rename');
 const replace 	= require('gulp-replace');
-const { watch } = require('gulp');
 
 const reg_import = /import(?:[\s.*]([\w*{}\n\r\t, ]+)[\s*]from)?[\s*](?:["'](.*[\w]+)["'])?/g;
 const reg_export = /export(?:[\s.*]([\w*{\n\r\t, )]+[\}]))/g;
@@ -86,7 +85,7 @@ gulp.task('watch', function(){
 		'src/em.cjs.js',
 		'src/em.es.js'
 	], {usePolling: true}, gulp.series(['systemrep']));
-});
+})
 
 if (args == '--build') {
 	gulp.task('default', gulp.series('systemrep'));

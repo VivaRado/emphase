@@ -32,5 +32,4 @@ const Utils = {
 	escapeRegex: escapeRegex,
 	multilineRegex: multilineRegex
 };
-
 module.exports = Utils;

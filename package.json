@@ -1,12 +1,12 @@
 {
   "name": "emphase",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Emphasize your syntax!",
   "main": "index.js",
   "scripts": {
     "test": "node test/script.js",
     "serve": "http-server",
-    "dev": "gulp --watch",
+    "dev": "reload -b & gulp --watch",
     "build": "gulp --build"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
+    "reload": "^3.2.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
