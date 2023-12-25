@@ -1,6 +1,6 @@
 {
   "name": "emphase",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Emphasize your syntax!",
   "main": "index.js",
   "scripts": {
