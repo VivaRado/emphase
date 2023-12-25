@@ -35,7 +35,6 @@ class Emphase {
 	generateSyntax(){
 		var em = this;
 		if (em._lang_ !== em._lang_unknown) {
-			console.log("TEST F")
 			// cache set
 			if (em._cfg.hl_stb) em.cama.cacheSetChunk( em, em._lang_.multiLineString, 'str', 'SB');
 			if (em._cfg.hl_cmb) em.cama.cacheSetChunk( em, em._lang_.multiLineComment, 'cmt', 'CB');

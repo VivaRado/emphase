@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 606.4 334.9" style="enable-background:new 0 0 606.4 334.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_4_);}
+	.st1{clip-path:url(#SVGID_6_);fill:none;}
+	.st2{fill:#A71500;}
+	.st3{font-family:monospace; font-weight:bold;}
+	.st4{font-size:7.5px;}
+	.st5{fill:#040303;}
+	.st6{font-family:monospace;}
+	.st7{fill:#D47823;}
+	.st8{fill:#393FA7;}
+	.st9{fill:#6FA43A;}
+	.st10{fill:none;stroke:#B7B7B7;stroke-width:1.5;stroke-miterlimit:10;}
+	.st11{fill:#B5B5B5;}
+	.st12{font-size:8.8598px;}
+	.st13{clip-path:url(#SVGID_10_);}
+	.st14{clip-path:url(#SVGID_10_);fill:none;}
+	.st15{fill:#4157CE;}
+	.st16{fill:#5C80D7;}
+	.st17{fill:#7D8389;}
+	.st18{fill:#70C470;}
+	.st19{fill:#FF8300;}
+	.st20{fill:#505255;}
+</style>
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M9.9,5.5h286.9c1.5,0,2.7,1.2,2.7,2.7v318.6c0,1.5-1.2,2.7-2.7,2.7H9.9c-1.5,0-2.7-1.2-2.7-2.7V8.2
+				C7.2,6.7,8.4,5.5,9.9,5.5z"/>
+		</defs>
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;fill:#FFFFFF;"/>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;fill:none;stroke:#B7B7B7;stroke-width:0.25;stroke-miterlimit:10;"/>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_3_" x="7.2" y="5.5" width="27.3" height="324"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+		</clipPath>
+		<g class="st0">
+			<defs>
+				<path id="SVGID_5_" d="M9.9,5.5H485c1.5,0,2.7,1.2,2.7,2.7v318.6c0,1.5-1.2,2.7-2.7,2.7H9.9c-1.5,0-2.7-1.2-2.7-2.7V8.2
+					C7.2,6.7,8.4,5.5,9.9,5.5z"/>
+			</defs>
+			<clipPath id="SVGID_6_">
+				<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
+			</clipPath>
+			<rect x="7.2" y="5.5" class="st1" width="27" height="324"/>
+		</g>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 38.6986 23.5464)" class="st2 st3 st4">import</text>
+		<text transform="matrix(1 0 0 1 70.1986 23.5464)" class="st5 st6 st4">* from &quot;library.js&quot;;</text>
+		<text transform="matrix(1 0 0 1 38.6986 35.6961)" class="st2 st3 st4">import</text>
+		<text transform="matrix(1 0 0 1 70.1986 35.6961)" class="st5 st6 st4">{ library } from &quot;library.js&quot;;</text>
+		<text transform="matrix(1 0 0 1 38.6986 59.9963)" class="st2 st3 st4">function</text>
+		<text transform="matrix(1 0 0 1 74.6986 59.9963)" class="st5 st6 st4"> foo(a){</text>
+		<text transform="matrix(1 0 0 1 47.6986 72.1459)" class="st2 st3 st4">var</text>
+		<text transform="matrix(1 0 0 1 61.1986 72.1459)" class="st5 st6 st4"> a = 0;</text>
+		<text transform="matrix(1 0 0 1 47.6986 84.2964)" class="st2 st3 st4">var</text>
+		<text transform="matrix(1 0 0 1 61.1986 84.2964)" class="st5 st6 st4"> count = a + 1;</text>
+		<text transform="matrix(1 0 0 1 47.6986 96.4461)" class="st2 st3 st4">if</text>
+		<text transform="matrix(1 0 0 1 56.6986 96.4461)" class="st5 st6 st4"> ( a == </text>
+		<text transform="matrix(1 0 0 1 92.6986 96.4461)" class="st7 st3 st4">true</text>
+		<text transform="matrix(1 0 0 1 110.6986 96.4461)" class="st5 st6 st4"> ) {</text>
+		<text transform="matrix(1 0 0 1 38.6986 108.5966)" class="st5 st6 st4">    console.log( </text>
+		<text transform="matrix(1 0 0 1 115.1986 108.5966)" class="st8 st6 st4">&quot;A &apos;a&apos;&quot;</text>
+		<text transform="matrix(1 0 0 1 146.6986 108.5966)" class="st5 st6 st4"> );</text>
+		<text transform="matrix(1 0 0 1 38.6986 120.7463)" class="st5 st6 st4">  } </text>
+		<text transform="matrix(1 0 0 1 56.6986 120.7463)" class="st2 st3 st4">else</text>
+		<text transform="matrix(1 0 0 1 74.6986 120.7463)" class="st5 st6 st4"> {</text>
+		<text transform="matrix(1 0 0 1 38.6986 132.8959)" class="st5 st6 st4">    console.log( </text>
+		<text transform="matrix(1 0 0 1 115.1986 132.8959)" class="st8 st6 st4">`B &quot;b&quot;`</text>
+		<text transform="matrix(1 0 0 1 146.6986 132.8959)" class="st5 st6 st4"> );</text>
+		<text transform="matrix(1 0 0 1 38.6986 145.0464)" class="st5 st6 st4">  }</text>
+		<text transform="matrix(1 0 0 1 47.6986 157.1961)" class="st2 st3 st4">var</text>
+		<text transform="matrix(1 0 0 1 61.1986 157.1961)" class="st5 st6 st4"> quo = </text>
+		<text transform="matrix(1 0 0 1 92.6986 157.1961)" class="st8 st6 st4">`</text>
+		<text transform="matrix(1 0 0 1 38.6986 169.3466)" class="st8 st6 st4">    quote line a</text>
+		<text transform="matrix(1 0 0 1 38.6986 181.4963)" class="st8 st6 st4">    quote line b</text>
+		<text transform="matrix(1 0 0 1 38.6986 193.6459)" class="st8 st6 st4">  `</text>
+		<text transform="matrix(1 0 0 1 52.1986 193.6459)" class="st5 st6 st4">;</text>
+		<text transform="matrix(1 0 0 1 47.6986 205.7964)" class="st2 st3 st4">return</text>
+		<text transform="matrix(1 0 0 1 74.6986 205.7964)" class="st5 st6 st4"> count; </text>
+		<text transform="matrix(1 0 0 1 38.6986 217.9461)" class="st5 st6 st4">};</text>
+		<text transform="matrix(1 0 0 1 38.6986 242.2463)" class="st9 st6 st4">// comment</text>
+		<text transform="matrix(1 0 0 1 38.6986 266.5464)" class="st9 st6 st4">/* comment line a</text>
+		<text transform="matrix(1 0 0 1 38.6986 278.6961)" class="st9 st6 st4">true comment line b </text>
+		<text transform="matrix(1 0 0 1 38.6986 290.8467)" class="st9 st6 st4">*/</text>
+		<text transform="matrix(1 0 0 1 38.6986 315.1459)" class="st2 st3 st4">export</text>
+		<text transform="matrix(1 0 0 1 70.1986 315.1459)" class="st5 st6 st4">{ foo };</text>
+		<text transform="matrix(1 0 0 1 20.6986 23.5464)" class="st6 st4">1</text>
+		<text transform="matrix(1 0 0 1 20.6986 35.6961)" class="st6 st4">2</text>
+		<text transform="matrix(1 0 0 1 20.6986 47.8466)" class="st6 st4">3</text>
+		<text transform="matrix(1 0 0 1 20.6986 59.9963)" class="st6 st4">4</text>
+		<text transform="matrix(1 0 0 1 20.6986 72.1459)" class="st6 st4">5</text>
+		<text transform="matrix(1 0 0 1 20.6986 84.2964)" class="st6 st4">6</text>
+		<text transform="matrix(1 0 0 1 20.6986 96.4461)" class="st6 st4">7</text>
+		<text transform="matrix(1 0 0 1 20.6986 108.5966)" class="st6 st4">8</text>
+		<text transform="matrix(1 0 0 1 20.6986 120.7463)" class="st6 st4">9</text>
+		<text transform="matrix(1 0 0 1 16.1986 132.8959)" class="st6 st4">10</text>
+		<text transform="matrix(1 0 0 1 16.1986 145.0464)" class="st6 st4">11</text>
+		<text transform="matrix(1 0 0 1 16.1986 157.1961)" class="st6 st4">12</text>
+		<text transform="matrix(1 0 0 1 16.1986 169.3466)" class="st6 st4">13</text>
+		<text transform="matrix(1 0 0 1 16.1986 181.4963)" class="st6 st4">14</text>
+		<text transform="matrix(1 0 0 1 16.1986 193.6459)" class="st6 st4">15</text>
+		<text transform="matrix(1 0 0 1 16.1986 205.7964)" class="st6 st4">16</text>
+		<text transform="matrix(1 0 0 1 16.1986 217.9461)" class="st6 st4">17</text>
+		<text transform="matrix(1 0 0 1 16.1986 230.0966)" class="st6 st4">18</text>
+		<text transform="matrix(1 0 0 1 16.1986 242.2463)" class="st6 st4">19</text>
+		<text transform="matrix(1 0 0 1 16.1986 254.3959)" class="st6 st4">20</text>
+		<text transform="matrix(1 0 0 1 16.1986 266.5464)" class="st6 st4">21</text>
+		<text transform="matrix(1 0 0 1 16.1986 278.6961)" class="st6 st4">22</text>
+		<text transform="matrix(1 0 0 1 16.1986 290.8467)" class="st6 st4">23</text>
+		<text transform="matrix(1 0 0 1 16.1986 302.9963)" class="st6 st4">24</text>
+		<text transform="matrix(1 0 0 1 16.1986 315.1459)" class="st6 st4">25</text>
+	</g>
+	<path class="st10" d="M263.1,29.4h29.3c0.8,0,1.5-0.7,1.5-1.5V13c0-0.8-0.7-1.5-1.5-1.5h-29.3c-0.8,0-1.5,0.7-1.5,1.5v14.9
+		C261.6,28.7,262.2,29.4,263.1,29.4z"/>
+	<g>
+		<text transform="matrix(1 0 0 1 267.9766 23.0287)" class="st11 st3 st12">Copy</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 206.9614 23.4365)" class="st11 st6 st12">JavaScript</text>
+	</g>
+	<g>
+		<g>
+			<defs>
+				<path id="SVGID_7_" d="M309.6,5.5h286.9c1.5,0,2.7,1.2,2.7,2.7v318.6c0,1.5-1.2,2.7-2.7,2.7H309.6c-1.5,0-2.7-1.2-2.7-2.7V8.2
+					C306.9,6.7,308.2,5.5,309.6,5.5z"/>
+			</defs>
+			<use xlink:href="#SVGID_7_"  style="overflow:visible;fill:#111111;"/>
+			<clipPath id="SVGID_8_">
+				<use xlink:href="#SVGID_7_"  style="overflow:visible;"/>
+			</clipPath>
+		</g>
+		<g>
+			<defs>
+				<rect id="SVGID_9_" x="306.9" y="5.5" width="27.3" height="324"/>
+			</defs>
+			<clipPath id="SVGID_10_">
+				<use xlink:href="#SVGID_9_"  style="overflow:visible;"/>
+			</clipPath>
+			<g class="st13">
+				<defs>
+					<path id="SVGID_11_" d="M309.6,5.5h475.1c1.5,0,2.7,1.2,2.7,2.7v318.6c0,1.5-1.2,2.7-2.7,2.7H309.6c-1.5,0-2.7-1.2-2.7-2.7V8.2
+						C306.9,6.7,308.2,5.5,309.6,5.5z"/>
+				</defs>
+				<clipPath id="SVGID_12_">
+					<use xlink:href="#SVGID_11_"  style="overflow:visible;"/>
+				</clipPath>
+			</g>
+			<rect x="306.9" y="5.5" class="st14" width="480.5" height="324"/>
+		</g>
+		<g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 23.5464)" class="st15 st3 st4">import</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 369.9486 23.5464)" class="st16 st6 st4">* from &quot;library.js&quot;;</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 35.6961)" class="st15 st3 st4">import</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 369.9486 35.6961)" class="st16 st6 st4">{ library } from &quot;library.js&quot;;</text>
+			</g>
+			<text transform="matrix(1 0 0 1 374.4486 59.9963)" class="st17 st6 st4"> foo(a){</text>
+			<text transform="matrix(1 0 0 1 360.9486 72.1459)" class="st17 st6 st4"> a = 0;</text>
+			<text transform="matrix(1 0 0 1 360.9486 84.2964)" class="st17 st6 st4"> count = a + 1;</text>
+			<text transform="matrix(1 0 0 1 356.4486 96.4461)" class="st17 st6 st4"> ( a == </text>
+			<text transform="matrix(1 0 0 1 392.4486 96.4461)" class="st18 st6 st4">true</text>
+			<text transform="matrix(1 0 0 1 410.4486 96.4461)" class="st17 st6 st4"> ) {</text>
+			<text transform="matrix(1 0 0 1 338.4486 108.5966)" class="st17 st6 st4">    console.log( </text>
+			<g>
+				<text transform="matrix(1 0 0 1 414.9486 108.5966)" class="st19 st6 st4">&quot;A &apos;a&apos;&quot;</text>
+			</g>
+			<text transform="matrix(1 0 0 1 446.4486 108.5966)" class="st17 st6 st4"> );</text>
+			<text transform="matrix(1 0 0 1 338.4486 120.7463)" class="st17 st6 st4">  } </text>
+			<text transform="matrix(1 0 0 1 374.4486 120.7463)" class="st17 st6 st4"> {</text>
+			<text transform="matrix(1 0 0 1 338.4486 132.8959)" class="st17 st6 st4">    console.log( </text>
+			<g>
+				<text transform="matrix(1 0 0 1 414.9486 132.8959)" class="st19 st6 st4">`B &quot;b&quot;`</text>
+			</g>
+			<text transform="matrix(1 0 0 1 446.4486 132.8959)" class="st17 st6 st4"> );</text>
+			<text transform="matrix(1 0 0 1 338.4486 145.0464)" class="st17 st6 st4">  }</text>
+			<text transform="matrix(1 0 0 1 360.9486 157.1961)" class="st17 st6 st4"> quo = </text>
+			<g>
+				<text transform="matrix(1 0 0 1 392.4486 157.1961)" class="st19 st6 st4">`</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 169.3466)" class="st19 st6 st4">    quote line a</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 181.4963)" class="st19 st6 st4">    quote line b</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 193.6459)" class="st19 st6 st4">  `</text>
+			</g>
+			<text transform="matrix(1 0 0 1 351.9486 193.6459)" class="st17 st6 st4">;</text>
+			<text transform="matrix(1 0 0 1 374.4486 205.7964)" class="st17 st6 st4"> count; </text>
+			<text transform="matrix(1 0 0 1 338.4486 217.9461)" class="st17 st6 st4">};</text>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 242.2463)" class="st20 st6 st4">// comment</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 266.5464)" class="st20 st6 st4">/* comment line a</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 278.6961)" class="st20 st6 st4">true comment line b </text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 338.4486 290.8467)" class="st20 st6 st4">*/</text>
+			</g>
+			<text transform="matrix(1 0 0 1 338.4486 315.1459)" class="st15 st3 st4">export</text>
+			<text transform="matrix(1 0 0 1 369.9486 315.1459)" class="st16 st6 st4">{ foo };</text>
+			<text transform="matrix(1 0 0 1 320.4486 23.5464)" class="st20 st6 st4">1</text>
+			<text transform="matrix(1 0 0 1 320.4486 35.6961)" class="st20 st6 st4">2</text>
+			<text transform="matrix(1 0 0 1 320.4486 47.8466)" class="st20 st6 st4">3</text>
+			<text transform="matrix(1 0 0 1 320.4486 59.9963)" class="st20 st6 st4">4</text>
+			<text transform="matrix(1 0 0 1 320.4486 72.1459)" class="st20 st6 st4">5</text>
+			<text transform="matrix(1 0 0 1 320.4486 84.2964)" class="st20 st6 st4">6</text>
+			<text transform="matrix(1 0 0 1 320.4486 96.4461)" class="st20 st6 st4">7</text>
+			<text transform="matrix(1 0 0 1 320.4486 108.5966)" class="st20 st6 st4">8</text>
+			<text transform="matrix(1 0 0 1 320.4486 120.7463)" class="st20 st6 st4">9</text>
+			<text transform="matrix(1 0 0 1 315.9486 132.8959)" class="st20 st6 st4">10</text>
+			<text transform="matrix(1 0 0 1 315.9486 145.0464)" class="st20 st6 st4">11</text>
+			<text transform="matrix(1 0 0 1 315.9486 157.1961)" class="st20 st6 st4">12</text>
+			<text transform="matrix(1 0 0 1 315.9486 169.3466)" class="st20 st6 st4">13</text>
+			<text transform="matrix(1 0 0 1 315.9486 181.4963)" class="st20 st6 st4">14</text>
+			<text transform="matrix(1 0 0 1 315.9486 193.6459)" class="st20 st6 st4">15</text>
+			<text transform="matrix(1 0 0 1 315.9486 205.7964)" class="st20 st6 st4">16</text>
+			<text transform="matrix(1 0 0 1 315.9486 217.9461)" class="st20 st6 st4">17</text>
+			<text transform="matrix(1 0 0 1 315.9486 230.0966)" class="st20 st6 st4">18</text>
+			<text transform="matrix(1 0 0 1 315.9486 242.2463)" class="st20 st6 st4">19</text>
+			<text transform="matrix(1 0 0 1 315.9486 254.3959)" class="st20 st6 st4">20</text>
+			<text transform="matrix(1 0 0 1 315.9486 266.5464)" class="st20 st6 st4">21</text>
+			<text transform="matrix(1 0 0 1 315.9486 278.6961)" class="st20 st6 st4">22</text>
+			<text transform="matrix(1 0 0 1 315.9486 290.8467)" class="st20 st6 st4">23</text>
+			<text transform="matrix(1 0 0 1 315.9486 302.9963)" class="st20 st6 st4">24</text>
+			<text transform="matrix(1 0 0 1 315.9486 315.1459)" class="st20 st6 st4">25</text>
+		</g>
+		<path class="st10" d="M562.8,29.4h29.3c0.8,0,1.5-0.7,1.5-1.5V13c0-0.8-0.7-1.5-1.5-1.5h-29.3c-0.8,0-1.5,0.7-1.5,1.5v14.9
+			C561.3,28.7,562,29.4,562.8,29.4z"/>
+		<g>
+			<text transform="matrix(1 0 0 1 567.7266 23.0287)" class="st11 st3 st12">Copy</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 506.7114 23.4365)" class="st11 st6 st12">JavaScript</text>
+		</g>
+		<text transform="matrix(1 0 0 1 338.4486 59.9963)" class="st19 st3 st4">function</text>
+		<text transform="matrix(1 0 0 1 347.4486 72.1459)" class="st19 st3 st4">var</text>
+		<text transform="matrix(1 0 0 1 347.4486 84.2964)" class="st19 st3 st4">var</text>
+		<text transform="matrix(1 0 0 1 347.4486 96.4461)" class="st19 st3 st4">if</text>
+		<text transform="matrix(1 0 0 1 356.4486 120.7463)" class="st19 st3 st4">else</text>
+		<text transform="matrix(1 0 0 1 347.4486 157.1961)" class="st19 st3 st4">var</text>
+		<text transform="matrix(1 0 0 1 347.4486 205.7964)" class="st19 st3 st4">return</text>
+	</g>
+</g>
+</svg>

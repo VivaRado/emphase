@@ -251,18 +251,18 @@ true comment line b
 import { library } from "library.js";
 
 function foo(a){
-var a = 0;
-var count = a + 1;
-if ( a == true ) {
-  console.log( "A 'a'" );
-} else {
-  console.log( `B "b"` );
-}
-var quo = `
-  quote line a
-  quote line b
-`;
-return count; 
+  var a = 0;
+  var count = a + 1;
+  if ( a == true ) {
+    console.log( "A 'a'" );
+  } else {
+    console.log( `B "b"` );
+  }
+  var quo = `
+    quote line a
+    quote line b
+  `;
+  return count; 
 };
 
 // comment
@@ -349,18 +349,18 @@ True comment line b
 from library.js import library
 
 def foo(a):
-a = 0
-count = a + 1
-if a == True:
-    print("A 'a'")
-else:
-    print('B "b"')
+  a = 0
+  count = a + 1
+  if a == True:
+      print("A 'a'")
+  else:
+      print('B "b"')
 
-quo = """
-quote line a
-quote line b
-"""
-return count
+  quo = """
+  quote line a
+  quote line b
+  """
+  return count
 
 # comment
 

@@ -66,6 +66,9 @@ var lang = {
         "null"
     ],
     comment: "//",
-    multiLineComment: {init: "/*", term: "*/", esc: "*"}
+    multiLineComment: [{init: "/*", term: "*/", esc: "*"}],
+    multiLineString: [],
+    directives: [],
+    directives_s: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

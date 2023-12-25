@@ -19,8 +19,6 @@ class CacheManager {
 					for (var y = 0; y < pt.length; y++) {
 						var sminx = em.result.indexOf(pt[y]);
 						var spl_cmt = pt[y].split(em._string.newLine);
-
-						/////////////////////////////////////////
 						var rep_arr = Utils.genRepArr(spl_cmt.length, `${clet}:${x}:${y}`, self.special);
 						for (var z = 0; z < rep_arr.length; z++) {
 							var _ps = Utils.encMarkup(spl_cmt[z]);
@@ -34,8 +32,6 @@ class CacheManager {
 							em._cached[clet][rep_arr[z]] = `${_prep}<em data-em="${nam}_mul">${_ps}</em>`;
 							_prep = '';
 						}
-						/////////////////////////////////////////
-
 						em.result = Utils.splice(em.result, sminx, pt[y].length, rep_arr.join('\n') );
 					}
 				}
@@ -49,7 +45,6 @@ class CacheManager {
 		if (em._cached[clet] == undefined) em._cached[clet] = {};
 		var t_init = '', t_term = '', t_mid = '', cmul = '', dcv_val = '', dcv_str = '', add_w = '', add_n = '';
 		if (pt != null) {
-			/////////////////////////////////////////
 			var rep_arr = Utils.genRepArr(pt.length, `${clet}`, self.special);
 			for (var x = 0; x < rep_arr.length; x++) {
 				var chunk = pt[x], sminx = em.result.indexOf(chunk);
@@ -81,7 +76,6 @@ class CacheManager {
 					em.result = Utils.splice(em.result, sminx, chunk.length, rep_arr[x]);
 				}
 			}
-			/////////////////////////////////////////
 		}
 	}
 	cacheReplace(em, cache) { 

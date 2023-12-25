@@ -7,7 +7,11 @@
 	--color-string: #484dd2;
 	--color-string-block: var(--color-string);
 	--color-black: #3b3a3a;
-	--color-gray: #bbb;=
+	--color-gray: #bbb;
+	--background-color: #FFF;
+	--btn-color: #FFF;
+	--btn-color-b: #666;
+	--btn-color-inv: #111;
 	--button-background-color: var(--color-black);
 	--border-radius: 0.5rem;
 	--transition: all 0.3s;
@@ -26,6 +30,10 @@
 		--color-string-block: var(--color-string);
 		--color-black: #acbac7;
 		--color-gray: #BBBBBB;
+		--background-color: #111;
+		--btn-color: #111;
+		--btn-color-b: #111;
+		--btn-color-inv: #FFF;
 		--color-numbers: #40454a;
 		--button-background-color: #F5F5F5;
 		--button-text-color: #3b3a3a;
@@ -48,7 +56,11 @@
 	overflow: hidden;
 	line-height: 1.35rem;
 	font-size: 10px;
+	border-radius: 0.3rem;
+	overflow: hidden;
+	background: var(--background-color);
 }
+
 .emphase .code {
 	overflow: auto;
 	position: relative;
@@ -65,7 +77,7 @@
 	height: 100%;
 	top: 0px;
 	left: 0px;
-	background: var(--numbers-tab-gradient);
+	background: var(--numbers-tab-gradient) !important;
 	display: block;
 	opacity: 1;
 	z-index: 2;
@@ -136,9 +148,9 @@
 }
 .emphase .header .button:hover {
 	cursor: pointer;
-	border: 2px solid #fff;
-	color: #000;
-	background: #fff;
+	border: 2px solid var(--btn-color-inv);
+	color: var(--btn-color-inv);
+	background: var(--btn-color);
 	opacity: 1;
 	transition: var(--transition);
 }

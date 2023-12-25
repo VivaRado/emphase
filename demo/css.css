@@ -23,12 +23,6 @@ body {
 	height: 100%;
 	box-sizing: border-box;
 }
-pre {
-	background: #111;
-	border-radius: 0.3rem;
-	overflow: hidden;
-}
-pre code {}
 .two>* {
 	width: calc(50% - 0.5rem);
 	float: left;

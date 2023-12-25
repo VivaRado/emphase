@@ -1,6 +1,5 @@
 import {Emphase} from 'Emphase';
 
-let textArea = document.getElementById('markdown')
 let output = document.getElementById('preview')
 var codeblocks = output.querySelectorAll("code");
 
