@@ -1,10 +1,11 @@
 {
   "name": "emphase",
-  "version": "0.0.18",
+  "version": "0.0.2",
   "description": "Emphasize your syntax!",
   "main": "index.js",
   "scripts": {
     "test": "node test/script.js",
+    "devmd": "reload -b -s index-md.html & gulp --watch",
     "dev": "reload -b & gulp --watch",
     "build": "gulp --build"
   },

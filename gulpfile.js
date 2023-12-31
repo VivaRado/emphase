@@ -69,7 +69,7 @@ function browserifier(done) {
 	.pipe(buffer())
 	.pipe(rename('em.js',{dirname: ''}))
 	.pipe(gulp.dest('./lib'));
-	if (done) done()
+	if (done) done();
 }
 
 gulp.task('systemrep', async() => {
@@ -93,4 +93,4 @@ if (args == '--build') {
 	gulp.task('default', gulp.series('watch'));
 }
 
-gulp.task('default', gulp.series('watch'));
+gulp.task('default', gulp.series('watch','systemrep'));

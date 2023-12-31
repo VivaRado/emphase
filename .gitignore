@@ -16,6 +16,6 @@ _README/assets/vendor/
 README_en.pdf
 geckodriver.log
 demo/vendor
-demo/demo_md.js
-demo/index_md.html
+demo/demo.md.js
+index-md.html
 package-lock.json

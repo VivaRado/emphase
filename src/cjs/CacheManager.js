@@ -5,81 +5,93 @@ class CacheManager {
 		this.special = '~';
 		return this
 	}
-	cacheSetChunk( em, mltarr, nam, clet) {
-		var self = this;
-		var add_pre = '', _prep = '';
-		if (em._cached[clet] == undefined) em._cached[clet] = {};
-		if (mltarr !== undefined && mltarr.length) {
-			for (var x = 0; x < mltarr.length; x++) {
-				if (mltarr[x].pre) add_pre = mltarr[x].pre;
-				var mltr = Utils.multilineRegex(mltarr[x]);
-				var rstr = new RegExp(add_pre+mltr, 'g');
-				var pt = em.result.match(rstr);
-				if (pt != null) {
-					for (var y = 0; y < pt.length; y++) {
-						var sminx = em.result.indexOf(pt[y]);
-						var spl_cmt = pt[y].split(em._string.newLine);
-						var rep_arr = Utils.genRepArr(spl_cmt.length, `${clet}:${x}:${y}`, self.special);
-						for (var z = 0; z < rep_arr.length; z++) {
-							var _ps = Utils.encMarkup(spl_cmt[z]);
-							if (spl_cmt[z].length == 0) _ps = '<br>';
-							if (add_pre.length > 0) {
-								if (_ps.match(new RegExp(add_pre, 'g'))) {
-									_prep = _ps.match(new RegExp(add_pre, 'g'))[0].split(mltarr[x].init)[0];
-								}
-								_ps = _ps.replace( new RegExp(add_pre, 'g'), '')
-							}
-							em._cached[clet][rep_arr[z]] = `${_prep}<em data-em="${nam}_mul">${_ps}</em>`;
-							_prep = '';
-						}
-						em.result = Utils.splice(em.result, sminx, pt[y].length, rep_arr.join('\n') );
-					}
-				}
-			}
-		}
+	cacheSetArea(em, reg, ctype, clet) {
+		var rep = [reg], mlt = false;
+		if (Array.isArray(reg) ) rep = reg, mlt = true;
+		this.cacheProcess(em, rep, ctype, clet, mlt)
 	}
-	cacheSetWord(em, reg, ctype, clet){
-		var self = this;
-		var reg_str = new RegExp(reg, 'g'),
-			pt = em.result.match(reg_str);
+	cacheTenant(em, reg, ctype, clet){
+		var mt = em.result.match(new RegExp(reg, 'g'));
 		if (em._cached[clet] == undefined) em._cached[clet] = {};
-		var t_init = '', t_term = '', t_mid = '', cmul = '', dcv_val = '', dcv_str = '', add_w = '', add_n = '';
-		if (pt != null) {
-			var rep_arr = Utils.genRepArr(pt.length, `${clet}`, self.special);
+		if (mt != null) {
+			var rep_arr = Utils.genRepArr(mt.length, clet, this.special);
 			for (var x = 0; x < rep_arr.length; x++) {
-				var chunk = pt[x], sminx = em.result.indexOf(chunk);
-				t_mid = chunk;
-				if (em._lang_.isMarkUp !== undefined && em._lang_.isMarkUp ) {
-					var tagname = chunk.replace(/[<|!|>]/g, '').split(em._string.space)[0],
-						tag_wrap = pt[x].split(tagname);
-					t_init = Utils.encMarkup(tag_wrap[0]);
-					t_term = Utils.encMarkup(tag_wrap[1]);
-					t_mid = tagname;
-				}
-				if (clet == 'D') {
-					var ptb = Array.from( pt[x].matchAll(reg_str))[0];
-					if (ptb != null || ptb[1] !== undefined) {
-						t_mid = ptb[1];
-						if (ptb[2] !== undefined) {
-							dcv_val = Utils.encMarkup(ptb[2]);
-							if (em._lang_.directives_s.includes(ptb[1])) {
-								dcv_str = `<em data-em="${ctype}_str">${dcv_val}</em>`;
-							} else {
-								dcv_str = dcv_val;
-							}
-							if (dcv_val.length == 0 || ptb[0].includes('\n') ) { add_n = '\n', add_w = ''; } else { add_w = ' '; }
-						}
-					}
-				}
-				if (sminx != -1 ) {
-					em._cached[clet][rep_arr[x]] = `${t_init}<em data-em="${ctype}${cmul}">${t_mid}</em>${t_term}${add_n}${add_w}${dcv_str}`;
-					em.result = Utils.splice(em.result, sminx, chunk.length, rep_arr[x]);
-				}
+				em._cached[clet][rep_arr[x]] = mt[x];
+				em.result = Utils.splice(em.result, em.result.indexOf(mt[x]), mt[x].length, rep_arr[x]);
 			}
 		}
 	}
 	cacheReplace(em, cache) { 
-		for (var v in em._cached[cache]) em.result = em.result.replace(v, em._cached[cache][v]) 
+		for (var v in em._cached[cache]) {
+			var cdat = em._cached[cache][v]
+			var repl = '';
+			if (Array.isArray(cdat)) {
+				repl = em._cached[cache][v].join('\n');
+			} else {
+				repl = em._cached[cache][v];
+			}
+			em.result = em.result.replace(v, repl)
+		} 
 	}
-};
+	cacheProcess(em, reparr, nam, clet, multiline) {
+		var self = this, add_pre = '', _prep = '';
+		if (em._cached[clet] == undefined) em._cached[clet] = {};
+		for (var x = 0; x < reparr.length; x++) {
+			var reg_res = reparr[x];
+			if (multiline) {
+				if (reparr[x].pre) add_pre = reparr[x].pre;
+				reg_res = add_pre + Utils.multilineRegex(reparr[x]);
+			}
+			var tkey = `${clet}:${x}`;
+			self.cacheTenant(em, reg_res, nam, tkey)
+			for (const [key, chunk] of Object.entries(em._cached[tkey])) {
+				var t_mid = chunk, t_init = '', t_term = '', cmul = '', dcv_val = '', dcv_str = '', add_w = ' ', add_n = '';
+				if (multiline) {
+					cmul = '_mul';
+					var spl_cmt = chunk.split(em._string.newLine), mlt_arr = [];
+					for (var z = 0; z < spl_cmt.length; z++) {
+						var _ps = Utils.encMarkup(spl_cmt[z]);
+						if (spl_cmt[z].length == 0) _ps = '<br>';
+						if (add_pre.length > 0) {
+							if (_ps.match(new RegExp(add_pre, 'g'))) {
+								_prep = _ps.match(new RegExp(add_pre, 'g'))[0].split(reparr[x].init)[0];
+							}
+							_ps = _ps.replace(new RegExp(add_pre, 'g'), '')
+						}
+						mlt_arr.push(`${_prep}<em data-em="${nam}${cmul}">${_ps}</em>`);
+						_prep = '';
+					}
+					em._cached[clet][key] = mlt_arr;
+				} else {
+					if (em._lang_.isMarkUp !== undefined && em._lang_.isMarkUp) {
+						var tagname = chunk.replace(/[<|!|>]/g, '').split(em._string.space)[0];
+						if (tagname.startsWith('/')) { tagname = tagname.substring(1) }
+						var tag_wrap = chunk.split(tagname);
+						t_init = Utils.encMarkup(tag_wrap[0]), t_term = Utils.encMarkup(tag_wrap[1]);
+						if (clet != 'CB') t_mid = tagname;
+						add_w = '';
+					}
+					if (clet == 'D') {
+						var mt = Array.from(chunk.matchAll(reparr[x]))[0];
+						if (mt != null) {
+							t_mid = mt[1];
+							if (mt[2] !== undefined) {
+								dcv_val = Utils.encMarkup(mt[2]);
+								if (em._lang_.directives_s.includes(mt[1])) {
+									dcv_str = `<em data-em="${nam}_str">${dcv_val}</em>`;
+								} else {
+									dcv_str = dcv_val;
+								}
+								if (dcv_val.length == 0 || mt[0].includes('\n')) {
+									add_n = '\n', add_w = '';
+								}
+							}
+						}
+					}
+					em._cached[clet][key] = `${t_init}<em data-em="${nam}${cmul}">${t_mid}</em>${t_term}${add_n}${add_w}${dcv_str}`;
+				}
+			}
+		}
+	}
+}
 module.exports = CacheManager

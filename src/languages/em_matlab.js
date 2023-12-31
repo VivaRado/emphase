@@ -23,10 +23,8 @@ var lang = {
         "try",
         "while"
     ],
-    directives: [
-    ],
-    directives_s: [
-    ],
+    directives: [],
+    directives_s: [],
     values: [
         "false",
         "true",

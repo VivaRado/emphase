@@ -63,8 +63,7 @@ var lang = {
         "with",
         "yield"
     ],
-    directives: [
-    ],
+    directives: [],
     directives_s: [
         "import",
         "export"

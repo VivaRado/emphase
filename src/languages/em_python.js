@@ -40,8 +40,7 @@ var lang = {
         "True",
         "None"
     ],
-    directives: [
-    ],
+    directives: [],
     directives_s: [
         "import",
         "from"

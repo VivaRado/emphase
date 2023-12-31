@@ -73,6 +73,7 @@ var lang = {
     multiLineComment: [
         {init: "/*", term: "*/", esc: "*"}
     ],
+    multiLineString: [],
     values: [
         "false",
         "true",

@@ -26,10 +26,8 @@ var lang = {
         "echo",
         "local"
     ],
-    directives: [
-    ],
-    directives_s: [
-    ],
+    directives: [],
+    directives_s: [],
     values: [
         "false",
         "true"
@@ -37,7 +35,6 @@ var lang = {
     comment: "#",
     dcv_symbol: "$",
     multiLineComment: [
-        {init: ": '", term: "'", esc: ""},
         {init: "(: \<\<|: )('|w+)", term: "(\\n\\2)", esc: "<>w"}
     ],
     stringLiterals: ["\"", "'"],

@@ -52,8 +52,7 @@ var lang = {
         "super",
         "while"    
     ],
-    directives: [
-    ],
+    directives: [],
     directives_s: [
         "import",
     ],

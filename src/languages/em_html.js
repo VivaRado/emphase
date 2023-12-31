@@ -130,6 +130,10 @@ var lang = {
         {init: "<!--", term: "-->"}
     ],
     stringLiterals: ["\"", "'"],
-    isMarkUp: true
+    multiLineString: [],
+    isMarkUp: true,
+    values: [],
+    directives: [],
+    directives_s: [],
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

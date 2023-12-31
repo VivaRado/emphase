@@ -35,36 +35,25 @@ class Emphase {
 	generateSyntax(){
 		var em = this;
 		if (em._lang_ !== em._lang_unknown) {
-			// cache set
-			if (em._cfg.hl_stb) em.cama.cacheSetChunk( em, em._lang_.multiLineString, 'str', 'SB');
-			if (em._cfg.hl_cmb) em.cama.cacheSetChunk( em, em._lang_.multiLineComment, 'cmt', 'CB');
 			var directives = [].concat(em._lang_.directives||[],em._lang_.directives_s||[]);
-			if (em._cfg.hl_dcv && directives.length) {
-				em.cama.cacheSetWord(em,`(${directives.join('|')})\\s([^\\n\\r]*)`, "dcv", `D`);
+			var notMarkup = (!em._lang_.isMarkUp || em._lang_.isMarkUp == undefined);
+			var reg_search = [
+				['str', 'SB', em._lang_.multiLineString, em._cfg.hl_stb ],
+				['cmt', 'CB', em._lang_.multiLineComment, em._cfg.hl_cmb ],
+				['dcv', `D` , `(${directives.join('|')})\\s([^\\n\\r]*)`, (em._cfg.hl_dcv && directives.length)],
+				['str', 'S' , `([${em._lang_.stringLiterals.join('|')}])(?:(?!\\1|\\\\).|\\\\.)*\\1`, em._cfg.hl_str],
+				['cmt', 'C' , em._lang_.comment + ".*", em._cfg.hl_cmt],
+				['kwd', 'HK', /(<([^>]+)>)/, !notMarkup],
+				['kwd', 'K' , `\\b(${em._lang_.keywords.join('|')})\\b`, notMarkup],
+				['val', 'VL', `\\b(${em._lang_.values.join('|')})\\b`, (em._cfg.hl_val && em._lang_.values.length)]
+			];
+			for (var i = 0; i < reg_search.length; i++) {
+				if (reg_search[i][3]) {
+					em.cama.cacheSetArea( em, reg_search[i][2], reg_search[i][0], reg_search[i][1])
+				}
 			}
-			if (em._cfg.hl_str) {
-				var reg_str = `([${em._lang_.stringLiterals.join('|')}])(?:(?!\\1|\\\\).|\\\\.)*\\1`;
-				em.cama.cacheSetWord(em,reg_str, 'str', 'S');
-			}
-			if (em._cfg.hl_cmt) {
-				var reg_str = em._lang_.comment + ".*";
-				em.cama.cacheSetWord(em,reg_str, 'cmt', 'C');
-			}
-			if (em._lang_.isMarkUp) {
-				var reg_str = /(<([^>]+)>)/;
-				em.cama.cacheSetWord(em,reg_str, 'kwd', 'HK');
-			} else {
-				em.cama.cacheSetWord(em,`\\b(${em._lang_.keywords.join('|')})\\b`, 'kwd', 'K');
-			}
-			if (em._cfg.hl_val && em._lang_.values && em._lang_.values.length) {
-				em.cama.cacheSetWord(em,`\\b(${em._lang_.values.join('|')})\\b`, 'val', 'VL');
-			}
-			// cache replace
-			if (em._lang_.isMarkUp) {
-				em.cama.cacheReplace(em, 'HK');
-			} else {
-				em.cama.cacheReplace(em, 'K');
-			}
+			if (!notMarkup) em.cama.cacheReplace(em, 'HK');
+			if ( notMarkup) em.cama.cacheReplace(em, 'K');
 			if (em._cfg.hl_dcv) em.cama.cacheReplace(em, 'D');
 			if (em._cfg.hl_val && em._lang_.values && em._lang_.values.length) em.cama.cacheReplace(em, 'VL');
 			if (em._cfg.hl_cmt) em.cama.cacheReplace(em, 'C'); em.cama.cacheReplace(em, 'CB');

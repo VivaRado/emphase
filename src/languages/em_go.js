@@ -26,8 +26,7 @@ var lang = {
         "return",
         "var"     
     ],
-    directives: [
-    ],
+    directives: [],
     directives_s: [
         "package",
         "import"

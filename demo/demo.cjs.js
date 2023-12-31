@@ -1,3 +1,4 @@
+let textArea = document.getElementById('markdown')
 let output = document.getElementById('preview')
 var codeblocks = output.querySelectorAll("code");
 
@@ -21,9 +22,20 @@ function process_codeblocks(codeblocks){
             // you could pass that to the emphasize() function from a data-attribute or just a string.
             var prefx = 'lang-';
             var lang = Array.from(codeblocks[i].classList).map( (s) => s.startsWith(prefx) && s.split(prefx)[1] )[0];
-            var data_headless = em.emphasize(codeblocks[i], lang)
+            em.emphasize(codeblocks[i], lang)
         }
     }
 }
+
+function reload_highlights(val, output){
+    output.innerHTML = marked.parse(val)
+    process_codeblocks(output.querySelectorAll("code"))
+}
+
+textArea.addEventListener('input', function(e){
+    reload_highlights(e.target.value, document.getElementById('preview'))
+});
+
+reload_highlights(textArea.value, output)
 
 process_codeblocks(output.querySelectorAll("code"))
