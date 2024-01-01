@@ -11,7 +11,7 @@ class CacheManager {
 		var get_type = Utils.getClass(clet, em.classTypes);
 		this.cacheProcess(em, rep, get_type, clet, mlt)
 	}
-	cacheTenant(em, reg, ctype, clet){
+	cacheTenant(em, reg, clet){
 		var mt = em.result.match(new RegExp(reg, 'g'));
 		if (em._cached[clet] == undefined) em._cached[clet] = {};
 		if (mt != null) {
@@ -35,25 +35,25 @@ class CacheManager {
 			var reg_res = reparr[x];
 			if (multiline) {
 				if (reparr[x].pre) add_pre = reparr[x].pre;
-				reg_res = add_pre + Utils.multilineRegex(reparr[x]);
+				reg_res = `${add_pre}${Utils.multilineRegex(reparr[x])}`;
 			}
 			var tkey = `${clet}:${x}`;
-			self.cacheTenant(em, reg_res, nam, tkey)
+			self.cacheTenant(em, reg_res, tkey);
 			for (const [key, chunk] of Object.entries(em._cached[tkey])) {
-				var t_mid = chunk, t_init = '', t_term = '', cmul = '', dcv_val = '', dcv_str = '', add_w = ' ', add_n = '';
+				var t_mid = chunk, t_init = '', t_term = '', cmul = '', dcv_val = '', dcv_str = '', add_w = '', add_n = '';
 				if (multiline) {
-					cmul = '_mul';
+					cmul = 'mul';
 					var spl_cmt = chunk.split(em._string.newLine), mlt_arr = [];
 					for (var z = 0; z < spl_cmt.length; z++) {
 						var _ps = Utils.encMarkup(spl_cmt[z]);
 						if (spl_cmt[z].length == 0) _ps = '<br>';
-						if (add_pre.length > 0) {
-							if (_ps.match(new RegExp(add_pre, 'g'))) {
+						if (add_pre.length > 0){
+							if (_ps.match(new RegExp(add_pre, 'g'))){
 								_prep = _ps.match(new RegExp(add_pre, 'g'))[0].split(reparr[x].init)[0];
 							}
 							_ps = _ps.replace(new RegExp(add_pre, 'g'), '')
 						}
-						mlt_arr.push(`${_prep}<em data-em="${nam}${cmul}">${_ps}</em>`);
+						mlt_arr.push(`${_prep}<em data-em="${nam}_${cmul}">${_ps}</em>`);
 						_prep = '';
 					}
 					em._cached[clet][key] = mlt_arr;
@@ -74,6 +74,7 @@ class CacheManager {
 								dcv_val = Utils.encMarkup(mt[2]);
 								if (em.ln.dcvs.includes(mt[1])) {
 									dcv_str = `<em data-em="${nam}_str">${dcv_val}</em>`;
+									add_w = ' ';
 								} else {
 									dcv_str = dcv_val;
 								}
@@ -83,7 +84,7 @@ class CacheManager {
 							}
 						}
 					}
-					em._cached[clet][key] = `${t_init}<em data-em="${nam}${cmul}">${t_mid}</em>${t_term}${add_n}${add_w}${dcv_str}`;
+					em._cached[clet][key] = `${t_init}<em data-em="${nam}">${t_mid}</em>${t_term}${add_n}${add_w}${dcv_str}`;
 				}
 			}
 		}

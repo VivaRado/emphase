@@ -36,8 +36,8 @@ class Emphase {
 		if (em.ln !== em._lang_unknown) {
 			// cache_key, replacement_order, config_setting, validation
 			var regs  = [
-				['SB', 7, em._cfg.hl_stb,                        em.ln.strb ],
-				['CB', 5, em._cfg.hl_cmb,                        em.ln.cmtb ],
+				['SB', 7, em._cfg.hl_stb,                         em.ln.strb ],
+				['CB', 5, em._cfg.hl_cmb,                         em.ln.cmtb ],
 				['D' , 2, (em._cfg.hl_dcv && em.dcvt.length),    `(${em.dcvt.join('|')})\\s([^\\n\\r]*)` ],
 				['S' , 6, em._cfg.hl_str,                        `([${em.ln.strl.join('|')}])(?:(?!\\1|\\\\).|\\\\.)*\\1` ],
 				['C' , 4, em._cfg.hl_cmt,                        `${em.ln.cmts}.*` ],

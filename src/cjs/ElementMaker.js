@@ -31,16 +31,15 @@ function makeNumberTab(em) {
 	em._numblst = classElement("div", "numbers");
 	em._code.prepend(em._numbtab)
 	em._numbtab.appendChild(em._numblst);
-	var syntax_elem = em._code.getElementsByClassName('syntax')[0];
+	var esyntx = em._code.getElementsByClassName('syntax')[0];
 	var nstyle = window.getComputedStyle(em._numblst);
-	var numbers_padding = ((parseInt(nstyle.paddingLeft) || 0) + parseInt(nstyle.paddingRight) || 0) / 2;
-	syntax_elem.style.marginLeft = `${em._numblst.offsetWidth + numbers_padding}px`;
-	em._numbtab.style.width = `${em._numblst.offsetWidth + numbers_padding}px`;
+	var numpad = ((parseInt(nstyle.paddingLeft) || 0) + parseInt(nstyle.paddingRight) || 0) / 2;
+	esyntx.style.marginLeft = em._numbtab.style.width = `${em._numblst.offsetWidth + numpad}px`;
 	em._code.addEventListener('scroll', function(e) {
-		scrollSync(e.target)
+		scrollSync(e.target);
 	});
 	em._code.addEventListener('resize', function(e) {
-		scrollSync(e.target)
+		scrollSync(e.target);
 	});
 }
 function createElements(em) {
@@ -52,7 +51,6 @@ function createElements(em) {
 	em._code.appendChild(em._syntax);
 	makeButtons(em);
 	if (em._cfg.showNumbersTab) makeNumberTab(em);
-
 	return em
 }
 function createLines(em) {
@@ -73,10 +71,10 @@ function createLines(em) {
 	}
 }
 const ElementMaker = {
+	scrollSync : scrollSync,
 	makeButtons : makeButtons,
 	createLines : createLines,
 	classElement : classElement,
-	scrollSync : scrollSync,
 	makeNumberTab : makeNumberTab,
 	createElements : createElements
 };
