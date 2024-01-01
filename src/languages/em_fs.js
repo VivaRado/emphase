@@ -1,7 +1,7 @@
 var lang = {
     name: "fs",
-    friendlyName: "F#",
-    keywords: [
+    fnam: "F#",
+    kwds: [
         "abstract",
         "and",
         "as",
@@ -67,19 +67,18 @@ var lang = {
         "yield",
         "const"            
     ],
-    directives: [],
-    directives_s: [],
-    dcv_symbol: "",
-    multiLineComment: [
+    dcvn: [],
+    dcvs: [],
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    multiLineString: [],
-    values: [
+    strb: [],
+    lval: [
         "false",
         "true",
         "null"
     ],
-    stringLiterals: ["\"", "'"],
-    comment: "//",
+    strl: ["\"", "'"],
+    cmts: "//",
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

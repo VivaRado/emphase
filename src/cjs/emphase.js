@@ -6,6 +6,7 @@ const Utils = require("./Utils.js");
 class Emphase {
 	constructor(cfg) {
 		var em = this;
+		em.classTypes = { 'str' : ['SB', 'S'], 'cmt' : ['CB', 'C'], 'dcv' : ['D'], 'kwd' : ['HK', 'K'], 'val' : ['VL'] };
 		em._def = {
 			hl_dcv: true, // directives
 			hl_cmt: true, // comments
@@ -21,12 +22,10 @@ class Emphase {
 		};
 		if (cfg == undefined) cfg = {}; em._cfg = {...em._def, ...cfg};
 		if (typeof document == "undefined" && typeof window == "undefined" ) em._cfg.headless = true;
-		if (typeof window != "undefined") {
-			var _em_la_ = {};
-		}
+		if (typeof window != "undefined") var _em_la_ = {};
 		em._syntax = null;
 		em._elements = {};
-		em._lang_ = null;
+		em.ln = null;
 		em._string = { empty: "", space: " ", newLine: "\n" };
 		em._cached = {};
 		em.lalo = new LanguageLoader();
@@ -34,52 +33,47 @@ class Emphase {
 	}
 	generateSyntax(){
 		var em = this;
-		if (em._lang_ !== em._lang_unknown) {
-			var directives = [].concat(em._lang_.directives||[],em._lang_.directives_s||[]);
-			var notMarkup = (!em._lang_.isMarkUp || em._lang_.isMarkUp == undefined);
-			var reg_search = [
-				['str', 'SB', em._lang_.multiLineString, em._cfg.hl_stb ],
-				['cmt', 'CB', em._lang_.multiLineComment, em._cfg.hl_cmb ],
-				['dcv', `D` , `(${directives.join('|')})\\s([^\\n\\r]*)`, (em._cfg.hl_dcv && directives.length)],
-				['str', 'S' , `([${em._lang_.stringLiterals.join('|')}])(?:(?!\\1|\\\\).|\\\\.)*\\1`, em._cfg.hl_str],
-				['cmt', 'C' , em._lang_.comment + ".*", em._cfg.hl_cmt],
-				['kwd', 'HK', /(<([^>]+)>)/, !notMarkup],
-				['kwd', 'K' , `\\b(${em._lang_.keywords.join('|')})\\b`, notMarkup],
-				['val', 'VL', `\\b(${em._lang_.values.join('|')})\\b`, (em._cfg.hl_val && em._lang_.values.length)]
+		if (em.ln !== em._lang_unknown) {
+			// cache_key, replacement_order, config_setting, validation
+			var regs  = [
+				['SB', 7, em._cfg.hl_stb,                        em.ln.strb ],
+				['CB', 5, em._cfg.hl_cmb,                        em.ln.cmtb ],
+				['D' , 2, (em._cfg.hl_dcv && em.dcvt.length),    `(${em.dcvt.join('|')})\\s([^\\n\\r]*)` ],
+				['S' , 6, em._cfg.hl_str,                        `([${em.ln.strl.join('|')}])(?:(?!\\1|\\\\).|\\\\.)*\\1` ],
+				['C' , 4, em._cfg.hl_cmt,                        `${em.ln.cmts}.*` ],
+				['HK', 0, !em.nmkp,                              `(<([^>]+)>)` ],
+				['K' , 1,  em.nmkp,                              `\\b(${em.ln.kwds.join('|')})\\b` ],
+				['VL', 3, (em._cfg.hl_val && em.ln.lval.length), `\\b(${em.ln.lval.join('|')})\\b` ]
 			];
-			for (var i = 0; i < reg_search.length; i++) {
-				if (reg_search[i][3]) {
-					em.cama.cacheSetArea( em, reg_search[i][2], reg_search[i][0], reg_search[i][1])
-				}
-			}
-			if (!notMarkup) em.cama.cacheReplace(em, 'HK');
-			if ( notMarkup) em.cama.cacheReplace(em, 'K');
-			if (em._cfg.hl_dcv) em.cama.cacheReplace(em, 'D');
-			if (em._cfg.hl_val && em._lang_.values && em._lang_.values.length) em.cama.cacheReplace(em, 'VL');
-			if (em._cfg.hl_cmt) em.cama.cacheReplace(em, 'C'); em.cama.cacheReplace(em, 'CB');
-			if (em._cfg.hl_str) em.cama.cacheReplace(em, 'S'); em.cama.cacheReplace(em, 'SB');
+			for (var i = 0; i < regs.length; i++) regs[i][2] && em.cama.cacheSetArea(em, regs[i][3], regs[i][0]);
+			regs.sort((a, b) => a[1] - b[1]);
+			for (var i = 0; i < regs.length; i++) regs[i][2] && em.cama.cacheReplace(em, regs[i][0])
 		} else {
 			em.result = Utils.encMarkup(em.result);
 		}		
 	}
 	emphasize(input, lang) {
-		var em = this, _init_data = '', guid = Utils.makeGUID();
+		var em = this, _input = '', guid = Utils.makeGUID();
 		em.lalo.assignLanguages(lang);
 		if ( typeof input === 'string' ){
 			em._elements[guid] = {text:input};
-			_init_data = input;
+			_input = input;
 		} else {
 			em._element = input;
-			_init_data = em._element.childNodes[0].nodeValue;
+			_input = em._element.childNodes[0].nodeValue;
 			if (!em._cfg.headless) {
 				if (typeof em._element.id !== undefined) em._element.id = guid;
 				em._elements[em._element.id] = {text:input.textContent};
-			}else {
+			} else {
 				em._elements[guid] = {text:input.textContent};
 			}
 		}
-		em._lang_ = em.lalo.getLanguage();
-		em.result = _init_data;
+		em.ln = em.lalo.getLanguage();
+		if (em.ln) {
+			em.dcvt = [].concat(em.ln.dcvn, em.ln.dcvs);
+			em.nmkp = (!em.ln.mkup || em.ln.mkup == undefined);
+		}
+		em.result = _input;
 		em.generateSyntax();
 		if (!em._cfg.headless) {
 			ElementMaker.createElements(em);

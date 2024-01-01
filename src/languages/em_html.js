@@ -1,7 +1,7 @@
 var lang = {
     name: "html",
-    friendlyName: "HTML",
-    keywords: [
+    fnam: "HTML",
+    kwds: [
         "DOCTYPE",
         "a",
         "abbr",
@@ -126,14 +126,14 @@ var lang = {
         "video",
         "wbr"
     ],
-    multiLineComment: [
+    cmtb: [
         {init: "<!--", term: "-->"}
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: [],
-    isMarkUp: true,
-    values: [],
-    directives: [],
-    directives_s: [],
+    strl: ["\"", "'"],
+    strb: [],
+    mkup: true,
+    lval: [],
+    dcvn: [],
+    dcvs: [],
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

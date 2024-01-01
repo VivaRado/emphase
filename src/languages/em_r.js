@@ -1,7 +1,7 @@
 var lang = {
     name: "r",
-    friendlyName: "R",
-    keywords: [
+    fnam: "R",
+    kwds: [
         "if",
         "else",
         "repeat",
@@ -20,16 +20,16 @@ var lang = {
         "NA_character_",
         "return"
     ],
-    values: [
+    lval: [
         "TRUE",
         "FALSE",
         "NULL"
     ],
-    comment: "#",
-    stringLiterals: ["\"", "'"],
-    multiLineComment: [],
-    multiLineString: [],
-    directives: [],
-    directives_s: []
+    cmts: "#",
+    strl: ["\"", "'"],
+    cmtb: [],
+    strb: [],
+    dcvn: [],
+    dcvs: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

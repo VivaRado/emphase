@@ -1,7 +1,7 @@
 var lang = {
     name: "vb",
-    friendlyName: "Visual Basic",
-    keywords: [
+    fnam: "Visual Basic",
+    kwds: [
         "AddHandler",
         "AddressOf",
         "Alias",
@@ -155,15 +155,15 @@ var lang = {
         "Xor",
         "#Else"  
     ],
-    values: [
+    lval: [
         "False",
         "True"
     ],
-    comment: "'",
-    multiLineComment: [{init: "/*", term: "*/", esc: "*"}],
-    stringLiterals: ["\""],
-    multiLineString: [{init: "`", term: "`"}],
-    directives: [],
-    directives_s: []
+    cmts: "'",
+    cmtb: [{init: "/*", term: "*/", esc: "*"}],
+    strl: ["\""],
+    strb: [{init: "`", term: "`"}],
+    dcvn: [],
+    dcvs: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

@@ -1,7 +1,7 @@
 var lang = {
     name: "scala",
-    friendlyName: "Scala",
-    keywords: [
+    fnam: "Scala",
+    kwds: [
         "abstract",
         "case",
         "catch",
@@ -39,15 +39,15 @@ var lang = {
         "with",
         "yield"
     ],
-    values: [
+    lval: [
         "false",
         "true",
         "Null"
     ],
-    comment: "//",
-    multiLineComment: [{init: "/*", term: "*/", esc: "*"}],
-    multiLineString: [],
-    directives: [],
-    directives_s: []
+    cmts: "//",
+    cmtb: [{init: "/*", term: "*/", esc: "*"}],
+    strb: [],
+    dcvn: [],
+    dcvs: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

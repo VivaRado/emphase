@@ -3,7 +3,7 @@ const Utils = require("./Utils.js");
 function makeButtons(em) {
 	var header = classElement("div", "header");
 	var lbl_lang = classElement("div", "label");
-	lbl_lang.innerHTML = em._lang_.friendlyName;
+	lbl_lang.innerHTML = em.ln.fnam;
 	header.prepend(lbl_lang);
 	em._code.parentNode.appendChild(header);
 	if (em._cfg.showCopyButton) {

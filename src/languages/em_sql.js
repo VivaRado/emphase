@@ -1,7 +1,7 @@
 var lang = {
     name: "sql",
-    friendlyName: "SQL",
-    keywords: [
+    fnam: "SQL",
+    kwds: [
         "ADD",
         "ALL",
         "ALTER",
@@ -188,11 +188,11 @@ var lang = {
         "WITHIN GROUP",
         "WRITETEXT",
     ],
-    comment: "--",
-    multiLineComment: [{init: "/*", term: "*/", esc: "*"}],
-    multiLineString: [],
-    directives: [],
-    directives_s: [],
-    values: []
+    cmts: "--",
+    cmtb: [{init: "/*", term: "*/", esc: "*"}],
+    strb: [],
+    dcvn: [],
+    dcvs: [],
+    lval: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

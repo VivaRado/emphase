@@ -1,7 +1,7 @@
 var lang = {
     name: "typescript",
-    friendlyName: "TypeScript",
-    keywords: [
+    fnam: "TypeScript",
+    kwds: [
         "break",
         "case",
         "catch",
@@ -60,15 +60,15 @@ var lang = {
         "from",
         "of"
     ],
-    values: [
+    lval: [
         "false",
         "true",
         "null"
     ],
-    comment: "//",
-    multiLineComment: [{init: "/*", term: "*/", esc: "*"}],
-    multiLineString: [],
-    directives: [],
-    directives_s: []
+    cmts: "//",
+    cmtb: [{init: "/*", term: "*/", esc: "*"}],
+    strb: [],
+    dcvn: [],
+    dcvs: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

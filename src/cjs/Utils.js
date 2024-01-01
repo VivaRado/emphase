@@ -23,13 +23,23 @@ function multilineRegex(mlc) {
 function toClipboard(elem){	
 	navigator.clipboard.writeText(elem.text);
 }
+function getClass(seek, obj){
+	var tkey = '';
+	Object.entries(obj).filter( function( [key, value] ){	
+		if (value.includes(seek)){
+			tkey = key;
+		}
+	});
+	return tkey;
+}
 const Utils = {
 	splice: splice,
 	makeGUID: makeGUID,
+	getClass: getClass,
 	genRepArr: genRepArr,
 	encMarkup: encMarkup,
 	toClipboard: toClipboard,
 	escapeRegex: escapeRegex,
-	multilineRegex: multilineRegex
+	multilineRegex: multilineRegex,
 };
 module.exports = Utils;

@@ -1,7 +1,7 @@
 var lang = {
     name: "python",
-    friendlyName: "Python",
-    keywords: [
+    fnam: "Python",
+    kwds: [
         "await",
         "else",
         //"import",
@@ -35,28 +35,27 @@ var lang = {
         "or",
         "yield"      
     ],
-    values: [
+    lval: [
         "False",
         "True",
         "None"
     ],
-    directives: [],
-    directives_s: [
+    dcvn: [],
+    dcvs: [
         "import",
         "from"
     ],
-    dcv_symbol: "",
-    comment: "#",
-    multiLineComment: [
+    cmts: "#",
+    cmtb: [
         {init: "'''", term: "'''", esc: ""},
         {init: "\"\"\"", term: "\"\"\"", esc: ""}
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: [
+    strl: ["\"", "'"],
+    strb: [
         {init: "'''", term: "'''", esc: "", pre: "=\\s*"},
         {init: "\"\"\"", term: "\"\"\"", esc: "", pre: "=\\s*"}
     ],
-    values: [
+    lval: [
         "True",
         "False"
     ]

@@ -1,7 +1,7 @@
 var lang = {
     name: "javascript",
-    friendlyName: "JavaScript",
-    keywords: [
+    fnam: "JavaScript",
+    kwds: [
         "abstract",
         "arguments",
         "await",
@@ -63,23 +63,22 @@ var lang = {
         "with",
         "yield"
     ],
-    directives: [],
-    directives_s: [
+    dcvn: [],
+    dcvs: [
         "import",
         "export"
     ],
-    values: [
+    lval: [
         "false",
         "true",
         "null"
     ],
-    dcv_symbol: "",
-    comment: "//",
-    multiLineComment: [
+    cmts: "//",
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    stringLiterals: ["\"", "'", "`"],
-    multiLineString: [
+    strl: ["\"", "'", "`"],
+    strb: [
         {init: "`", term: "`", esc: ""}
     ]
 }

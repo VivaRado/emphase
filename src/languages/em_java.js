@@ -1,7 +1,7 @@
 var lang = {
     name: "java",
-    friendlyName: "Java",
-    keywords: [
+    fnam: "Java",
+    kwds: [
         "abstract",
         "continue",
         "for",
@@ -52,22 +52,21 @@ var lang = {
         "super",
         "while"    
     ],
-    directives: [],
-    directives_s: [
+    dcvn: [],
+    dcvs: [
         "import",
     ],
-    values: [
+    lval: [
         "false",
         "true",
         "null"
     ],
-    dcv_symbol: "",
-    comment: "//",
-    multiLineComment: [
+    cmts: "//",
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: [
+    strl: ["\"", "'"],
+    strb: [
         {init: '"""', term: '"""', esc: ""}
     ]
 };

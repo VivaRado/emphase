@@ -1,7 +1,7 @@
 var lang = {
     name: "matlab",
-    friendlyName: "Matlab",
-    keywords: [
+    fnam: "Matlab",
+    kwds: [
         "break",
         "case",
         "catch",
@@ -23,19 +23,18 @@ var lang = {
         "try",
         "while"
     ],
-    directives: [],
-    directives_s: [],
-    values: [
+    dcvn: [],
+    dcvs: [],
+    lval: [
         "false",
         "true",
         "null"
     ],
-    dcv_symbol: "",
-    comment: "%",
-    multiLineComment: [
+    cmts: "%",
+    cmtb: [
         {init: "%{", term: "%}", esc: "%"}
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: []
+    strl: ["\"", "'"],
+    strb: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

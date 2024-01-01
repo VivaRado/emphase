@@ -1,7 +1,7 @@
 var lang = {
     name: "ruby",
-    friendlyName: "Ruby",
-    keywords: [
+    fnam: "Ruby",
+    kwds: [
         "BEGIN",
         "END",
         "alias",
@@ -37,14 +37,14 @@ var lang = {
         "defined?",
         "self"   
     ],
-    values: [
+    lval: [
         "false",
         "true"
     ],
-    comment: "#",
-    multiLineComment: [{init: "=begin", term: "=end"}],
-    multiLineString: [],
-    directives: [],
-    directives_s: []
+    cmts: "#",
+    cmtb: [{init: "=begin", term: "=end"}],
+    strb: [],
+    dcvn: [],
+    dcvs: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

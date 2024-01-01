@@ -1,7 +1,7 @@
 var lang = {
     name: "cs",
-    friendlyName: "C#",
-    keywords: [
+    fnam: "C#",
+    kwds: [
         "abstract",
         "as",
         "base",
@@ -78,7 +78,7 @@ var lang = {
         "volatile",
         "while"        
     ],
-    directives: [
+    dcvn: [
         "#define",
         "#undef",
         "#ifdef",
@@ -95,19 +95,18 @@ var lang = {
         "#region",
         "#endregion"
     ],
-    directives_s: [
+    dcvs: [
         "#include"
     ],
-    dcv_symbol: "#",
-    multiLineComment: [
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    stringLiterals: ["\"", "'"],
-    values: [
+    strl: ["\"", "'"],
+    lval: [
         "false",
         "true",
         "null"
     ],
-    comment: "//",
+    cmts: "//",
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

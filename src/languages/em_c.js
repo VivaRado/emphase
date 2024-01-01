@@ -1,7 +1,7 @@
 var lang = {
     name: "c",
-    friendlyName: "C",
-    keywords: [
+    fnam: "C",
+    kwds: [
         "auto",
         "break",
         "case",
@@ -35,10 +35,10 @@ var lang = {
         "volatile",
         "while"
     ],
-    functions: [
+    func: [
         "printf"
     ],
-    directives: [
+    dcvn: [
         "#define",
         "#undef",
         "#if",
@@ -50,16 +50,15 @@ var lang = {
         "#endif",
         "#error",
     ],
-    directives_s: [
+    dcvs: [
         "#include"
     ],
-    comment: "//",
-    dcv_symbol: "#",
-    multiLineComment: [
+    cmts: "//",
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    stringLiterals: ["\"", "'"],
-    values: [
+    strl: ["\"", "'"],
+    lval: [
         "TRUE",
         "FALSE"
     ],

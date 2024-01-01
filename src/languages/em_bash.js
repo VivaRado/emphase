@@ -1,7 +1,7 @@
 var lang = {
     name: "bash",
-    friendlyName: "Bash",
-    keywords: [
+    fnam: "Bash",
+    kwds: [
         "if",
         "then",
         "elif",
@@ -21,23 +21,22 @@ var lang = {
         "function",
         "return"
     ],
-    keywords_b: [
+    func: [
         "command",
         "echo",
         "local"
     ],
-    directives: [],
-    directives_s: [],
-    values: [
+    dcvn: [],
+    dcvs: [],
+    lval: [
         "false",
         "true"
     ],
-    comment: "#",
-    dcv_symbol: "$",
-    multiLineComment: [
+    cmts: "#",
+    cmtb: [
         {init: "(: \<\<|: )('|w+)", term: "(\\n\\2)", esc: "<>w"}
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: []
+    strl: ["\"", "'"],
+    strb: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang);} else {module.exports = lang;}

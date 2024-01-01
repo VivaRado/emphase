@@ -1,7 +1,7 @@
 var lang = {
     name: "cpp",
-    friendlyName: "C++",
-    keywords: [
+    fnam: "C++",
+    kwds: [
         "alignas",
         "alignof",
         "and",
@@ -95,7 +95,7 @@ var lang = {
         "xor",
         "xor_eq"     
     ],
-    directives: [
+    dcvn: [
         "#define",
         "#undef",
         "#ifdef",
@@ -112,21 +112,20 @@ var lang = {
         "#region",
         "#endregion"
     ],
-    directives_s: [
+    dcvs: [
         "#include",
         'using'
     ],
-    dcv_symbol: "#",
-    multiLineComment: [
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    stringLiterals: ["\"", "'"],
-    values: [
+    strl: ["\"", "'"],
+    lval: [
         "false",
         "true"
     ],
-    comment: "//",
-    multiLineString: [
+    cmts: "//",
+    strb: [
         {init: "R\"(", term: ")\"", esc: ""}
     ]
 };

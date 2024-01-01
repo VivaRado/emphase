@@ -1,7 +1,7 @@
 var lang = {
     name: "perl",
-    friendlyName: "Perl",
-    keywords: [
+    fnam: "Perl",
+    kwds: [
         "__DATA__",
         "__END__",
         "__FILE__",
@@ -45,20 +45,20 @@ var lang = {
         "my",
         "return"
     ],
-    comment: "#",
-    multiLineComment: [
+    cmts: "#",
+    cmtb: [
         {init: "=pod", term: "=cut"},
-        {init: "/*", term: "*/", esc: "*"} // Acme::Comment
+        {init: "/*", term: "*/", esc: "*"} // Acme::cmts
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: [
+    strl: ["\"", "'"],
+    strb: [
         {init: "<<END", term: "END", esc: "<"}
     ],
-    values: [
+    lval: [
         "True",
         "False"
     ],
-    directives: [],
-    directives_s: []
+    dcvn: [],
+    dcvs: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }

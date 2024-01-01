@@ -5,10 +5,11 @@ class CacheManager {
 		this.special = '~';
 		return this
 	}
-	cacheSetArea(em, reg, ctype, clet) {
+	cacheSetArea(em, reg, clet) {
 		var rep = [reg], mlt = false;
 		if (Array.isArray(reg) ) rep = reg, mlt = true;
-		this.cacheProcess(em, rep, ctype, clet, mlt)
+		var get_type = Utils.getClass(clet, em.classTypes);
+		this.cacheProcess(em, rep, get_type, clet, mlt)
 	}
 	cacheTenant(em, reg, ctype, clet){
 		var mt = em.result.match(new RegExp(reg, 'g'));
@@ -23,13 +24,7 @@ class CacheManager {
 	}
 	cacheReplace(em, cache) { 
 		for (var v in em._cached[cache]) {
-			var cdat = em._cached[cache][v]
-			var repl = '';
-			if (Array.isArray(cdat)) {
-				repl = em._cached[cache][v].join('\n');
-			} else {
-				repl = em._cached[cache][v];
-			}
+			var repl = Array.isArray(em._cached[cache][v]) ? em._cached[cache][v].join('\n') : em._cached[cache][v];
 			em.result = em.result.replace(v, repl)
 		} 
 	}
@@ -63,7 +58,7 @@ class CacheManager {
 					}
 					em._cached[clet][key] = mlt_arr;
 				} else {
-					if (em._lang_.isMarkUp !== undefined && em._lang_.isMarkUp) {
+					if (em.ln.mkup !== undefined && em.ln.mkup) {
 						var tagname = chunk.replace(/[<|!|>]/g, '').split(em._string.space)[0];
 						if (tagname.startsWith('/')) { tagname = tagname.substring(1) }
 						var tag_wrap = chunk.split(tagname);
@@ -77,7 +72,7 @@ class CacheManager {
 							t_mid = mt[1];
 							if (mt[2] !== undefined) {
 								dcv_val = Utils.encMarkup(mt[2]);
-								if (em._lang_.directives_s.includes(mt[1])) {
+								if (em.ln.dcvs.includes(mt[1])) {
 									dcv_str = `<em data-em="${nam}_str">${dcv_val}</em>`;
 								} else {
 									dcv_str = dcv_val;

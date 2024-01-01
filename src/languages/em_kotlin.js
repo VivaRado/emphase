@@ -1,7 +1,7 @@
 var lang = {
     name: "kotlin",
-    friendlyName: "Kotlin",
-    keywords: [
+    fnam: "Kotlin",
+    kwds: [
         "break",
         "class",
         "continue",
@@ -72,26 +72,25 @@ var lang = {
         "tailrec",
         "vararg"
     ],
-    directives: [
+    dcvn: [
         "as",
         "as\\?",
     ],
-    directives_s: [
+    dcvs: [
         "import",
         "package"
     ],
-    values: [
+    lval: [
         "false",
         "true",
         "null"
     ],
-    dcv_symbol: "",
-    comment: "//",
-    multiLineComment: [
+    cmts: "//",
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: [
+    strl: ["\"", "'"],
+    strb: [
         {init: '\"\"\"', term: '\"\"\"', esc: ""}
     ]
 }

@@ -1,7 +1,7 @@
 var lang = {
     name: "go",
-    friendlyName: "Go",
-    keywords: [
+    fnam: "Go",
+    kwds: [
         "break",
         "default",
         "func",
@@ -26,23 +26,22 @@ var lang = {
         "return",
         "var"     
     ],
-    directives: [],
-    directives_s: [
+    dcvn: [],
+    dcvs: [
         "package",
         "import"
     ],
-    dcv_symbol: "",
-    comment: "//",
-    multiLineComment: [
+    cmts: "//",
+    cmtb: [
         {init: "/*", term: "*/", esc: "*"}
     ],
-    values: [
+    lval: [
         "false",
         "true",
         "null"
     ],
-    stringLiterals: ["\"", "'"],
-    multiLineString: [
+    strl: ["\"", "'"],
+    strb: [
         {init: "`", term: "`", esc: ""}
     ]
 };

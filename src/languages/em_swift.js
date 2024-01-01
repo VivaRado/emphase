@@ -1,7 +1,7 @@
 var lang = {
     name: "swift",
-    friendlyName: "Swift",
-    keywords: [
+    fnam: "Swift",
+    kwds: [
         "class",
         "deinit",
         "enum",
@@ -71,14 +71,14 @@ var lang = {
         "weak",
         "willSet"
     ],
-    values: [
+    lval: [
         "false",
         "true"
     ],
-    comment: "//",
-    multiLineComment: [{init: "/*", term: "*/", esc: "*"}],
-    multiLineString: [],
-    directives: [],
-    directives_s: []
+    cmts: "//",
+    cmtb: [{init: "/*", term: "*/", esc: "*"}],
+    strb: [],
+    dcvn: [],
+    dcvs: []
 };
 if (typeof window !== "undefined") { null==window._em_la_&&(window._em_la_={}),lang.name in Object.keys(window._em_la_)||(window._em_la_[lang.name]=lang); } else { module.exports = lang }
