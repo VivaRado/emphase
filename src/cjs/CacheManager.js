@@ -64,7 +64,6 @@ class CacheManager {
 						var tag_wrap = chunk.split(tagname);
 						t_init = Utils.encMarkup(tag_wrap[0]), t_term = Utils.encMarkup(tag_wrap[1]);
 						if (clet != 'CB') t_mid = tagname;
-						add_w = '';
 					}
 					if (clet == 'D') {
 						var mt = Array.from(chunk.matchAll(reparr[x]))[0];
@@ -73,9 +72,10 @@ class CacheManager {
 							if (mt[2] !== undefined) {
 								dcv_val = Utils.encMarkup(mt[2]);
 								if (em.ln.dcvs.includes(mt[1])) {
-									dcv_str = `<em data-em="${nam}_str">${dcv_val}</em>`;
 									add_w = ' ';
+									dcv_str = `<em data-em="${nam}_str">${dcv_val}</em>`;
 								} else {
+									add_w = ' ';
 									dcv_str = dcv_val;
 								}
 								if (dcv_val.length == 0 || mt[0].includes('\n')) {

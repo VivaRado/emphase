@@ -102,7 +102,7 @@ The **ElementMaker** is for creating the various HTML elements needed to display
 
 
 
-To work on extending this module a few thigs are provided:
+To work on extending this module a few things are provided:
 
 Run in browser with reload allong with gulp watch:
 
