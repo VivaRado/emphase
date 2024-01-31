@@ -32,6 +32,13 @@ function getClass(seek, obj){
 	});
 	return tkey;
 }
+function displayTextWidth(text, font) {
+  let canvas = displayTextWidth.canvas || (displayTextWidth.canvas = document.createElement("canvas"));
+  let context = canvas.getContext("2d");
+  context.font = font;
+  let metrics = context.measureText(text);
+  return metrics.width;
+}
 const Utils = {
 	splice: splice,
 	makeGUID: makeGUID,
@@ -41,5 +48,6 @@ const Utils = {
 	toClipboard: toClipboard,
 	escapeRegex: escapeRegex,
 	multilineRegex: multilineRegex,
+	displayTextWidth: displayTextWidth,
 };
 module.exports = Utils;

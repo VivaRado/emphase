@@ -31,10 +31,6 @@ function makeNumberTab(em) {
 	em._numblst = classElement("div", "numbers");
 	em._code.prepend(em._numbtab)
 	em._numbtab.appendChild(em._numblst);
-	var esyntx = em._code.getElementsByClassName('syntax')[0];
-	var nstyle = window.getComputedStyle(em._numblst);
-	var numpad = ((parseInt(nstyle.paddingLeft) || 0) + parseInt(nstyle.paddingRight) || 0) / 2;
-	esyntx.style.marginLeft = em._numbtab.style.width = `${em._numblst.offsetWidth + numpad}px`;
 	em._code.addEventListener('scroll', function(e) {
 		scrollSync(e.target);
 	});
@@ -53,6 +49,7 @@ function createElements(em) {
 	if (em._cfg.showNumbersTab) makeNumberTab(em);
 	return em
 }
+
 function createLines(em) {
 	var lines = em.result.split(em._string.newLine),
 		linesLength = lines.length,
@@ -69,6 +66,12 @@ function createLines(em) {
 		syntaxCode.innerHTML = line.trim() === em._string.empty ? "<br>" : line;
 		em._syntax.appendChild(syntaxCode);
 	}
+	var esyntx = em._code.getElementsByClassName('syntax')[0];
+	var nstyle = window.getComputedStyle(em._numblst.querySelector('p'));
+	var dtw = Utils.displayTextWidth(lineNumber-1, nstyle.fontSize+" "+nstyle.fontFamily)
+	var padd = 20;
+	esyntx.style.marginLeft = em._numbtab.style.width = `${dtw + padd}px`;
+
 }
 const ElementMaker = {
 	scrollSync : scrollSync,

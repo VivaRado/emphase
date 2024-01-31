@@ -1,4 +1,3 @@
-let textArea = document.getElementById('markdown')
 let output = document.getElementById('preview')
 var codeblocks = output.querySelectorAll("code");
 
@@ -31,11 +30,5 @@ function reload_highlights(val, output){
     output.innerHTML = marked.parse(val)
     process_codeblocks(output.querySelectorAll("code"))
 }
-
-textArea.addEventListener('input', function(e){
-    reload_highlights(e.target.value, document.getElementById('preview'))
-});
-
-reload_highlights(textArea.value, output)
 
 process_codeblocks(output.querySelectorAll("code"))
