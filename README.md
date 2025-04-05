@@ -322,25 +322,11 @@ console.log( em.emphasize(string, 'bash').result );
 
 ### **Features**
 
-
-
 * Modern interface.
 * Extensive and Deep Language Coverage.
 * Light and Dark Theme.
 * Client and Server Side.
 * ~350 lines of code uncompressed.
-
----
-
-### **User Interface**
-<sub>Features / User Interface</sub>
-
-<br>
-
-
-**Overfading Numbers Tab**
-
-![Screenshot](_README/assets/media/em_overflow_numtab.gif)
 
 ---
 
