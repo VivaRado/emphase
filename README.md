@@ -396,14 +396,3 @@ console.log( em.emphasize(string, 'bash').result );
 
 
 **Emphase**: [em-fuh-see].
-
----
-
-
-### **Reference**
-
-
-
-Language Keywords from [jsyntax](https://www.npmjs.com/package/jsyntax.js)
-
----

@@ -93,4 +93,4 @@ if (args == '--build') {
 	gulp.task('default', gulp.series('watch'));
 }
 
-gulp.task('default', gulp.series('watch','systemrep'));
+gulp.task('default', gulp.series('systemrep'));
